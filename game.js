@@ -9,7 +9,7 @@
 const language = 'en'; // can be 'he'
 
 const fs = require('fs');
-const titles = fs.readFileSync('article_titles.txt', 'utf-8').split('\r');
+const titles = fs.readFileSync('./article_titles.txt', 'utf-8').split('\r');
 // const titles = ['Shekel'];
 
 const function_words = ['a', 'is', 'an', 'the', 'and', 'or', 'but', 'for', 'nor', 'so', 'yet', 'to', 'of', 'in', 'on', 'at', 'by', 'with', 'from', 'up', 'about', 'over', 'above', 'below', 'under', 'out', 'off', 'down', 'before', 'after', 'since', 'during', 'although', 'despite', 'instead', 'however', 'nevertheless', 'furthermore', 'moreover', 'otherwise', 'accordingly', 'consequently', 'hence', 'meanwhile', 'similarly', 'therefore', 'thus', 'as', 'if', 'unless', 'because', 'since', 'that', 'when', 'where', 'while', 'who', 'whom', 'whose', 'what', 'which', 'how', 'why', 'whether', 'whoever', 'whatever', 'whenever', 'wherever', 'however', 'whichever', 'whomever'];
@@ -31,40 +31,39 @@ const game = {
 	// config
 	turns_per_player: 3,
 	// variables
-	word: '',
-	article: '',
 	words: []
 };
 
-let title_num = titles.length-1; // todo
-
-start();
-function start() {
+select_and_fetch_article();
+function select_and_fetch_article() {
 	// get a random word from the dictionary
 	select_title();
 	// get the wikipedia article for that word
-	get_article(start_game);
+	fetch_article(start_game);
 }
 function start_game() {
 	clean_up_article_text();
 	create_word_list();
 	clean_up_word_list();
 	count_and_sort_words();
-	show_top_terms(0); // todo
-	if(game.words.length < 10)  // todo
-		console.log('>>>>>> '+game.article_title + ' has less than 10 words');
-	if(title_num >= 0) // todo
-		start();
+	// if not enough words (maybe a bad article) then start again
+	if(game.words.length < 10) 
+	{
+		select_and_fetch_article();
+		return;
+	}
+	// start user interaction here
+	show_top_terms(0);
 	// show the article itself
 	// show_article();
 }
 function show_top_terms(num){
-	const top_ten_terms = game.words.slice(0, num);
-	// console.table(top_ten_terms); // todo
-	const top_ten_terms_word_count = top_ten_terms.reduce((a, b) => a + b.count, 0);
-	// console.log('Top 10 terms together have '+top_ten_terms_word_count 
-	// + ' occurrences. out of a total of ' + game.total_words + ' total words = '
-	// + Math.round(top_ten_terms_word_count / game.total_words * 100) + '%'); // todo
+	const top_terms = game.words.slice(0, num);
+	console.table(top_terms);
+	const top_terms_word_count = top_terms.reduce((a, b) => a + b.count, 0);
+	console.log('Top 10 terms together have '+top_terms_word_count
+	+ ' occurrences. out of a total of ' + game.total_words + ' total words = '
+	+ Math.round(top_terms_word_count / game.total_words * 100) + '%');
 }
 /* open a new window with the game.url showing in it
 function show_article(){
@@ -73,17 +72,15 @@ function show_article(){
 }
 */
 function select_title(){
-	// return titles[Math.floor(Math.random() * titles.length)]; // todo
-	game.article_title = titles[title_num--]; // todo
+	game.article_title = titles[Math.floor(Math.random() * titles.length)];
 }
-function get_article(cb) {
+function fetch_article(cb) {
 	// fetch the wikipedia article of the word provided
 	console.log('fetching article for '+game.article_title+'...');
 	game.url = 'https://'+language+'.wikipedia.org/w/api.php?action=parse&page='+game.article_title+'&format=json';
 	fetch(game.url)
 		.then(response => response.json())
 		.then(json => {
-			const title = json.parse.title;
 			game.article_text = json.parse.text['*'];
 			const cheerio = require('cheerio');
 			const $ = cheerio.load(game.article_text);
