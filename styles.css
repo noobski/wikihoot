@@ -1,0 +1,66 @@
+#container {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+  }
+  
+  #title {
+	margin-top: 50px;
+  }
+  
+  #game {
+	margin-top: 50px;
+  }
+  
+  #term {
+	font-size: 24px;
+  }
+  
+  #guess {
+	margin-top: 10px;
+	padding: 5px;
+	font-size: 16px;
+  }
+  
+  #submit {
+	margin-top: 10px;
+	padding: 5px 20px;
+	font-size: 16px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  #submit:hover {
+	background-color: #3e8e41;
+  }
+  
+  #timer {
+	margin-top: 10px;
+	font-size: 24px;
+  }
+  
+  #score {
+	margin-top: 10px;
+	font-size: 24px;
+  }
+  
+  #play-again,
+  #view-article {
+	margin-top: 10px;
+	padding: 5px 20px;
+	font-size: 16px;
+	background-color: #008CBA;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  #play-again:hover,
+  #view-article:hover {
+	background-color: #006080;
+  }
+  
