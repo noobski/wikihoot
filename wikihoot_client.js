@@ -1,7 +1,15 @@
 /* eslint-disable no-console */
+let server_url;
+const current_url = window.location.href;
+if(current_url.includes('file:') || current_url.includes('localhost'))
+	server_url = 'http://localhost:3111';
+else
+	server_url = 'http://poco.la:3111';
 // eslint-disable-next-line no-undef
-// const socket = io('http://localhost:3111');
-const socket = io('http://poco.la:3111');
+const socket = io(server_url);
+
+
+
 
 // if username doesn't exist in browser's memory, ask for it and store in the browser
 let username = localStorage.getItem('username');
@@ -39,7 +47,8 @@ socket.on('timer', (time) => {
 	if(time === 0)
 	{
 		// send guesses to server
-		const guesses_array = document.getElementById('guesses_container').value.split('\n');
+		const guesses = document.getElementById('guesses_container').value.split('\n');
+		const guesses_array = guesses.split(/[\s]+/);
 		socket.emit('user_guesses', guesses_array);
 	}
 });
