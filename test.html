@@ -37,28 +37,54 @@
       align-items: center;
     }
 
-    textarea {
+    #timer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+
+    #textarea-container {
+      position: relative;
+      width: 95%;
+      height: 70vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #textarea {
       width: 100%;
       height: 100%;
       resize: vertical;
       border: none;
       padding: 1rem;
-      font-size: 1.5rem;
-      line-height: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.5;
       box-sizing: border-box;
+	  background-image: url('./img/wiki_logo_faded.png');
 	  background-image: url('./img/wiki_logo_faded.png');
       background-repeat: no-repeat;
 	  background-size: auto 100%;
-}
-  </style>
+    }
+</style>
 </head>
 <body>
   <header>
     <h1>Wikihoot!</h1>
   </header>
   <main>
-    <textarea placeholder="Type here..."></textarea>
-  </main>
+	<div id="textarea-container">
+		<textarea id="textarea" placeholder="Type here..."></textarea>
+		<div id="timer"></div>
+	</div>
+	<script src="test.js"></script>  </main>
 </body>
 </html>
    
