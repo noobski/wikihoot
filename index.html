@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>Wikihoot!</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+  <link rel='stylesheet' type='text/css' href='styles.css'>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js'></script>
 </head>
 <body>
@@ -15,21 +15,23 @@
 
 <!--
 	<button id='instructions_button'>Instructions</button>
-	<p id='instructions' style="display: none;">All players receive a Wikipedia article name, and have 20 seconds to type in as many 
+	<p id='instructions' style='display: none;'>All players receive a Wikipedia article name, and have 20 seconds to type in as many 
 		words as they can think of that appear many times in the article. At the end of the 20
 		seconds, each player will receive a score based on how many times these words (and their
 		variants) appear in the article. The player with the highest score wins! </p>
 -->
 
-	<div id='players_container' style="border: 1px solid grey; width: 200px"></div><br>
+	<div id='players_container' style='border: 1px solid grey; width: 200px'></div><br>
 
 	<button id='start_button'>Start</button>
 
-	<div id="textarea-container">
-		<textarea id="guesses_container" placeholder="Type here..."></textarea>
-		<div id="timer"></div>
+	<div id='textarea-container'>
+		<textarea id='guesses_container' placeholder='Type here...'></textarea>
+		<div id='timer'></div>
 	</div>
 
+	<button id='restart'>Restart</button>
+	
 	<script src='./wikihoot_client.js'> </script>
 	</main>	
 </body>
