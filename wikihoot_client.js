@@ -46,6 +46,9 @@ restart_button.onclick = () => {
 	document.getElementById('players_container').style.backgroundColor = 'orange';
 	// re-enable the start button
 	start_button.style.display = 'block';
+	// re-set the title of the page
+	document.querySelector('#article_container').innerHTML = 'Wikihoot!';
+	
 };
 
 // timer
