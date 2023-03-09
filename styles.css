@@ -50,11 +50,10 @@ textarea {
 	border-radius: 10px;
 	font-size: 20px;
   }
-
   #textarea-container {
 	position: relative;
 	width: 90%;
-	height: 70vh;
+	height: 25vh;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
