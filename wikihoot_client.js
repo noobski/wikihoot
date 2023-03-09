@@ -47,9 +47,8 @@ socket.on('timer', (time) => {
 	if(time === 0)
 	{
 		// send guesses to server
-		const guesses = document.getElementById('guesses_container').value.split('\n');
-		const guesses_array = guesses.split(/[\s]+/);
-		socket.emit('user_guesses', guesses_array);
+		const guesses = document.getElementById('guesses_container').value.split(/[\s]+/);
+		socket.emit('user_guesses', guesses);
 	}
 });
 
@@ -78,7 +77,7 @@ socket.on('score', (words) => {
 });
 
 // instructions button
-const instructionsButton = document.querySelector('#instructions_button');
+/* const instructionsButton = document.querySelector('#instructions_button');
 const instructions = document.querySelector('#instructions');
 instructionsButton.addEventListener('click', () => {
 	if (instructions.style.display === 'none') {
@@ -87,6 +86,7 @@ instructionsButton.addEventListener('click', () => {
 		instructions.style.display = 'none';
 	}
 });
+*/
 
 const guesses_container = document.querySelector('#guesses_container');
 const players_container = document.querySelector('#players_container');

@@ -1,53 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WikiHoot!</title>
-  <style>
-	#players_container {
-		background-color: orange;
-		color: white;
-		font-weight: bold;
-	}
-	textarea {
-		width: 90vw;
-		height: 30vh;
-		background-color: ghostwhite;
-	}
-	  /* align everything in the body to the center */
-	body {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		font-family: 'sd Georgia light regular','Times serif';
-}
-	
-  </style>
+  <title>Wikihoot!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js'></script>
 </head>
 <body>
-	<h1>WikiHoot!</h1>
+	<header>
+		<h1 id='article_container'>Wikihoot!</h1>
+	</header>
+	<main>
+
+<!--
+
 	<button id='instructions_button'>Instructions</button>
 	<p id='instructions' style="display: none;">All players receive a Wikipedia article name, and have 20 seconds to type in as many 
 		words as they can think of that appear many times in the article. At the end of the 20
 		seconds, each player will receive a score based on how many times these words (and their
 		variants) appear in the article. The player with the highest score wins! </p>
+-->
 
-	<p>Your Wikipedia Article is...:</p>
-	<h1 id='article_container'>???</h1>
-
-	<p>Players in your group:</p>
+	<span>Players in your group:</span><br>
 	<div id='players_container' style="border: 1px solid grey; width: 200px"></div><br>
 
 	<button id='start_button'>Start</button>
 
-	<p>Your guesses (no words from the title!):</p>
-	<textarea id='guesses_container'></textarea>
-
-	<p>Time left:</p>
-	<h2 id='timer'></h2>
+	<div id="textarea-container">
+		<textarea id="guesses_container" placeholder="Type here..."></textarea>
+		<div id="timer"></div>
+	</div>
 
 	<script src='./wikihoot_client.js'> </script>
+	</main>	
 </body>
 </html>
 
