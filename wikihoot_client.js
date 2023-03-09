@@ -8,9 +8,6 @@ else
 // eslint-disable-next-line no-undef
 const socket = io(server_url);
 
-
-
-
 // if username doesn't exist in browser's memory, ask for it and store in the browser
 let username = localStorage.getItem('username');
 if (!username) {
@@ -38,6 +35,15 @@ socket.on('player_list', (players) => {
 const start_button = document.querySelector('#start_button');
 start_button.onclick = () => {
 	socket.emit('start');
+};
+// restart button. when pressed, restart the game
+const restart_button = document.querySelector('#restart_button');
+restart_button.onclick = () => {
+	socket.emit('restart');
+	// empty the textarea
+	guesses_container.value = 'Type here...';
+	// make the players_container background back to orange
+	document.getElementById('players_container').style.backgroundColor = 'orange';
 };
 
 // timer
