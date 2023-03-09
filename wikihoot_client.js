@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-undef
-const socket = io('http://localhost:3111');
+// const socket = io('http://localhost:3111');
+const socket = io('http://poco.la:3111');
 
 // if username doesn't exist in browser's memory, ask for it and store in the browser
 let username = localStorage.getItem('username');
