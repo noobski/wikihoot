@@ -44,6 +44,8 @@ restart_button.onclick = () => {
 	guesses_container.value = 'Type here...';
 	// make the players_container background back to orange
 	document.getElementById('players_container').style.backgroundColor = 'orange';
+	// re-enable the start button
+	start_button.style.display = 'block';
 };
 
 // timer
