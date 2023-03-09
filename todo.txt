@@ -1,3 +1,12 @@
 WIKIGUESS TODO:
 --------------
-- should be a mash of 'family feud' with 'kahoot'
+- name: should be a mash of 'family feud' with 'kahoot'
+
+FEATURES:
+- size of stuff for mobile
+- back to lobby button instead of start
+- deploy on server
+
+BUGS:
+- if 2 players have same name, server crashes
+- rooms stay in db

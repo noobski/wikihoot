@@ -1,24 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the Most Commonly Used Word</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div id="container">
-      <h1 id="title">Guess the Most Commonly Used Word</h1>
-      <div id="game">
-        <h2 id="term"></h2>
-        <input type="text" id="guess" placeholder="Enter your guess...">
-        <button id="submit">Submit</button>
-        <p id="timer">10</p>
-        <p id="score"></p>
-        <button id="play-again">Play Again</button>
-        <button id="view-article">View Article</button>
-      </div>
-    </div>
-    <script src="game.js"></script>
-  </body>
+<html>
+<head>
+  <title>WikiHoot!</title>
+  <style>
+	#players_container {
+		background-color: orange;
+		color: white;
+		font-weight: bold;
+	}
+	textarea {
+		width: 100vw;
+		height: 30vh;
+		background-color: ghostwhite;
+	}
+	  /* align everything in the body to the center */
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		font-family: 'sd Georgia light regular','Times serif';
+}
+	
+  </style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js'></script>
+</head>
+<body>
+	<h1>WikiHoot!</h1>
+	<button id='instructions_button'>Instructions</button>
+	<p id='instructions' style="display: none;">All players receive a Wikipedia article name, and have 20 seconds to type in as many 
+		words as they can think of that appear many times in the article. At the end of the 20
+		seconds, each player will receive a score based on how many times these words (and their
+		variants) appear in the article. The player with the highest score wins! </p>
+
+	<p>Your Wikipedia Article is...:</p>
+	<h1 id='article_container'>???</h1>
+
+	<p>Players in your group:</p>
+	<div id='players_container' style="border: 1px solid grey; width: 200px"></div><br>
+
+	<button id='start_button'>Start</button>
+
+	<p>Your guesses (no words from the title!):</p>
+	<textarea id='guesses_container'></textarea>
+
+	<p>Time left:</p>
+	<h2 id='timer'></h2>
+
+	<script src='./wikihoot_client.js'> </script>
+</body>
 </html>
+
