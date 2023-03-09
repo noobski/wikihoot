@@ -41,7 +41,8 @@ const restart_button = document.querySelector('#restart_button');
 restart_button.onclick = () => {
 	socket.emit('restart');
 	// empty the textarea
-	guesses_container.value = 'Type here...';
+	guesses_container.value = '';
+	guesses_container.placeholder='Type here...';
 	// make the players_container background back to orange
 	document.getElementById('players_container').style.backgroundColor = 'orange';
 	// re-enable the start button
