@@ -15,6 +15,10 @@ if (!username) {
 		username = prompt('How do you want to be called: ');
 	localStorage.setItem('username', username);
 }
+
+// hide the restart button
+document.querySelector('#restart_button').style.display = 'none';
+
 // Send the username to the server when the user joins
 socket.emit('join', username);
 
@@ -26,6 +30,8 @@ socket.on('game_start', (data) => {
 	update_players(data.players);
 	// update the article title
 	document.querySelector('#article_container').innerHTML = data.article_title;
+	// set its class to inverted_header
+	document.querySelector('#article_container').className = 'inverted_header';
 });
 // Update users waiting in lobby
 socket.on('player_list', (players) => {
@@ -47,9 +53,12 @@ restart_button.onclick = () => {
 	document.getElementById('players_container').style.backgroundColor = 'orange';
 	// re-enable the start button
 	start_button.style.display = 'block';
+	// hide the restart button
+	restart_button.style.display = 'none';
 	// re-set the title of the page
 	document.querySelector('#article_container').innerHTML = 'Wikihoot!';
-	
+	// set its class to normal_header
+	document.querySelector('#article_container').className = 'normal_header';
 };
 
 // timer
@@ -61,6 +70,8 @@ socket.on('timer', (time) => {
 		// send guesses to server
 		const guesses = document.getElementById('guesses_container').value.split(/[\s]+/);
 		socket.emit('user_guesses', guesses);
+		// show the restart button
+		restart_button.style.display = 'block';
 	}
 });
 

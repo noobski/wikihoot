@@ -21,7 +21,14 @@ header {
 	justify-content: center;
 	align-items: center;
 	height: 20vh;
+}
+.normal_header {
 	background-color: #f5f5f5;
+	color: black;
+}
+.inverted_header {
+	color: #f5f5f5;
+	background-color: black;
 }
 
 h1 {
