@@ -2,6 +2,16 @@ WIKIGUESS TODO:
 --------------
 - name: should be a mash of 'family feud' with 'kahoot'
 
+TODO:
+- change article_list_editor to also check whether all the titles are real wiki articles
+- checking player entries: make sure no part of the title is scored
+- showing score: 
+  - without stuff in parenthases
+  - sorted by score of word
+  - show highest word in round and which player created them
+- provide 60 seconds for game
+
+
 FEATURES:
 - size of stuff for mobile
 - back to lobby button instead of start
