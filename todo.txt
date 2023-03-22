@@ -3,15 +3,24 @@ WIKIGUESS TODO:
 - name: should be a mash of 'family feud' with 'kahoot'
 
 TODO:
-- change article_list_editor to also check whether all the titles are real wiki articles
++ change article_list_editor to also check whether all the titles are real wiki articles
+- create option for hebrew
 - checking player entries: make sure no part of the title is scored
 - showing score: 
   - without stuff in parenthases
   - sorted by score of word
-  - show highest word in round and which player created them
+  - show 10 highest words, and who guessed each (incl. nobody)
 - provide 60 seconds for game
-
-
+- after pressing start, all players should get feedback ('generating...') until title appears
+- how do i want to deal with space in the input (like "south america")
+- when creating the word list, 'star' and 'stars' are considered as different words. should be
+  consolidated in to one word (article_generator.js function: create_word_list)
+- check that all words in the article_generator word list are real words, and lowercase, etc.  
+  check by debugging and looking at the array
+- after playing a while, check how much garbage is in the server's user db, by using the route '/rooms'
+- beofre the words are sorted (by occurance) in article_generator, they should be consolidated so 
+  that 'scent' and 'scents' for example are counted together
+  
 FEATURES:
 - size of stuff for mobile
 - back to lobby button instead of start

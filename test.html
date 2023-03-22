@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-
-  <title>Wikihoot!</title>
-</head>
-<body>
-  <header>
-    <h1>Wikihoot!</h1>
-  </header>
-  <main>
-	<div id="textarea-container">
-		<textarea id="textarea" placeholder="Type here..."></textarea>
-		<div id="timer"></div>
-	</div>
-	<script src="test.js"></script>  </main>
-</body>
+<html>
+  <head>
+    <title>Wikihoot</title>
+    <link rel="stylesheet" type="text/css" href="test_style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Wikihoot</h1>
+      <button id="start-btn">Start</button>
+    </header>
+    <div id="game-container">
+      <div id="timer-container">
+        <p id="timer">45</p>
+      </div>
+      <div id="word-input-container">
+        <input type="text" id="word-input" placeholder="Enter words...">
+        <button id="submit-btn">Submit</button>
+      </div>
+      <div id="score-container">
+        <h2>Score:</h2>
+        <ul id="score-list">
+          <!-- Score list will be populated with JS -->
+        </ul>
+      </div>
+      <div id="article-container">
+        <h2>Article:</h2>
+        <p id="article-text">
+          <!-- Article text will be populated with JS -->
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
-   

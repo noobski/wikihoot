@@ -22,16 +22,25 @@
 -->
 	Players:
 	<div id='players_container'></div><br>
+	<select id="lang-select">
+		<option value="en">English</option>
+		<option value="he">Hebrew</option>
+	</select>
 
-	<button id='start_button'>Start</button>
+	<div id='game_button_container'>
+		<button id='start_button'>Start</button>
+		<button id='quit_button'>Quit</button>
+		<button id='restart_button'>Restart</button>
+	</div>	
 
-	<div id='textarea-container'>
+	<div id='game_container'>
 		<textarea id='guesses_container' placeholder='Type here...'></textarea>
-		<div id='timer'></div>
+		<div id='timer_container'></div>
 	</div>
 
-	<button id='restart_button'>Restart</button>
+	<div id='results_container'></div>
 
+	<script src='./wikihoot_ui.js'> </script>
 	<script src='./wikihoot_client.js'> </script>
 	</main>	
 </body>

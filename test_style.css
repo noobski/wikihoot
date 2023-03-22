@@ -1,0 +1,158 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #F3E9DC;
+	color: #333;
+  }
+  
+  header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #4F4E78;
+	color: #fff;
+  }
+  
+  h1 {
+	margin: 0;
+	font-size: 36px;
+	font-weight: bold;
+  }
+  
+  button {
+	background-color: #C74034;
+	border: none;
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+	background-color: #A03025;
+  }
+  
+  #game-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border: 2px solid #4F4E78;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #timer-container {
+	text-align: center;
+	margin-bottom: 20px;
+  }
+  
+  #timer {
+	font-size: 72px;
+	font-weight: bold;
+	color: #C74034;
+	margin: 0;
+  }
+  
+  #word-input-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+  
+  #word-input {
+	width: 100%;
+	max-width: 500px;
+	padding: 10px;
+	font-size: 16px;
+	border: 2px solid #4F4E78;
+	border-radius: 5px;
+	margin-bottom: 10px;
+  }
+  
+  #submit-btn {
+	background-color: #4F4E78;
+	border: none;
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  #submit-btn:hover {
+	background-color: #3B3A62;
+  }
+  
+  #score-container {
+	margin-bottom: 20px;
+  }
+  
+  #score-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  #score-list li {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #4F4E78;
+  }
+  
+  #article-container {
+	margin-bottom: 20px;
+  }
+  
+  #article-container h2 {
+	margin-top: 0;
+	font-size: 36px;
+	font-weight: bold;
+	color: #4F4E78;
+  }
+  
+  #article-text {
+	font-size: 18px;
+	line-height: 1.5;
+  }
+  
+  #article-text a {
+	color: #C74034;
+	text-decoration: underline;
+  }
+  
+  @media screen and (max-width: 600px) {
+	h1 {
+	  font-size: 24px;
+	}
+	
+	#timer {
+	  font-size: 48px;
+	}
+	
+	#word-input {
+	  max-width: 100%;
+	}
+	
+	#submit-btn {
+	  padding: 8px 16px;
+	  font-size: 14px
+	}
+
+	#score-list li {
+	font-size: 18px;
+	}
+	
+	#article-container h2 {
+	font-size: 24px;
+	}
+	
+	#article-text {
+	font-size: 16px;
+	}
+}  
