@@ -78,22 +78,6 @@ class UI {
 		// put the matrix in to a table, and append that table to g
 		const table = document.createElement('table');
 		for (let i = 0; i < matrix.length; i++) {
-			if(i==0)
-			{
-				// create the player score part of the table
-				const scores = matrix[0];
-				scores.forEach(user_score => {
-					const row = document.createElement('tr');
-					let cell = document.createElement('td');
-					cell.innerHTML = user_score.username;
-					row.appendChild(cell);
-					cell = document.createElement('td');
-					cell.innerHTML = user_score.score;
-					row.appendChild(cell);
-					table.appendChild(row);
-				});
-				continue;
-			}
 			const row = document.createElement('tr');
 			const keys = Object.keys(matrix[i]);
 			for (let j = 0; j < keys.length; j++) {
@@ -117,7 +101,7 @@ class UI {
 		for (let i = 0; i < players.length; i++) {
 			const player = document.createElement('div');
 			player.innerHTML = players[i].username;
-			player.innerHTML += (players[i].score != null ? players[i].score : '');
+			player.innerHTML += (players[i].score != null ? ' - ' + players[i].score : '');
 			this.players_c.appendChild(player);
 		}
 	}

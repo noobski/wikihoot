@@ -3,6 +3,7 @@ WIKIGUESS TODO:
 - name: should be a mash of 'family feud' with 'kahoot'
 
 TODO:
+- scores in the 'players' section
 + change article_list_editor to also check whether all the titles are real wiki articles
 - create option for hebrew
 - checking player entries: make sure no part of the title is scored

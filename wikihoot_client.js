@@ -45,8 +45,8 @@ class Game {
 			socket.emit('quit');
 			this.ui.change_state('lobby');
 		};
-		// final score
-		socket.on('score', (matrix) => {
+		// final results
+		socket.on('results', (matrix) => {
 			this.ui.change_state('results', matrix);
 		});
 	}
