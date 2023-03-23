@@ -6,13 +6,13 @@ TODO:
 + change article_list_editor to also check whether all the titles are real wiki articles
 - create option for hebrew
 - checking player entries: make sure no part of the title is scored
-- showing score: 
-  - without stuff in parenthases
-  - sorted by score of word
-  - show 10 highest words, and who guessed each (incl. nobody)
-- provide 60 seconds for game
-- after pressing start, all players should get feedback ('generating...') until title appears
-- how do i want to deal with space in the input (like "south america")
++ showing score: 
+  + without stuff in parenthases
+  + sorted by score of word
+  + show 10 highest words, and who guessed each (incl. nobody)
++ provide 60 seconds for game
++ after pressing start, all players should get feedback ('generating...') until title appears
++ how do i want to deal with space in the input (like "south america")
 - when creating the word list, 'star' and 'stars' are considered as different words. should be
   consolidated in to one word (article_generator.js function: create_word_list)
 - check that all words in the article_generator word list are real words, and lowercase, etc.  
@@ -20,12 +20,8 @@ TODO:
 - after playing a while, check how much garbage is in the server's user db, by using the route '/rooms'
 - beofre the words are sorted (by occurance) in article_generator, they should be consolidated so 
   that 'scent' and 'scents' for example are counted together
-  
-FEATURES:
+- add 'es' 'tion' and other suffixes to the part that creates variants
 - size of stuff for mobile
-- back to lobby button instead of start
-- deploy on server
-
-BUGS:
++ back to lobby button instead of start
++ deploy on server
 - if 2 players have same name, server crashes
-- rooms stay in db

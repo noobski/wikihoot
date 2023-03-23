@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 // eslint-disable-next-line no-unused-vars
 class UI {
 	constructor() {
@@ -36,6 +37,8 @@ class UI {
 			article_c.innerHTML = 'Wikihoot!';
 		}
 		else if(new_state === 'game'){
+			// stop spinner on start button
+			this.start_spinner_on_start_button(false);
 			// empty the textarea
 			guesses_c.value = '';
 			guesses_c.placeholder='Type here...';
@@ -117,5 +120,26 @@ class UI {
 			player.innerHTML += (players[i].score != null ? players[i].score : '');
 			this.players_c.appendChild(player);
 		}
+	}
+	start_spinner_on_start_button(start=true){
+		this.spinner_on_start_button = start;
+		this.loop_spinner();
+	}
+	loop_spinner(){
+		const b = this.buttons_c.start;
+		if(!this.spinner_on_start_button)
+		{
+			b.innerHTML = 'Start';
+			b.style.backgroundColor = 'green';
+			return;
+		}
+		b.style.backgroundColor = 'grey';
+		const title = b.innerHTML;
+		// length of title is 5 when it is 'Start', and another 2 for each '.' on either side
+		if(title.length<15)
+			b.innerHTML = '.' + title + '.';
+		else
+			b.innerHTML = 'Start';
+		setTimeout(() => this.loop_spinner(), 300);
 	}
 }

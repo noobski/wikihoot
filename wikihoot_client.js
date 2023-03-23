@@ -20,7 +20,10 @@ class Game {
 		socket.on('player_list', (players) => this.ui.update_players(players));
 		// listen for the start button event. when pressed, send message 'start' to the server
 		const start_button = document.querySelector('#start_button');
-		start_button.onclick = () => socket.emit('start');
+		start_button.onclick = () => {
+			socket.emit('start');
+			this.ui.start_spinner_on_start_button(true);
+		};
 		// restart button. when pressed, restart the game
 		const restart_button = document.querySelector('#restart_button');
 		restart_button.onclick = () => {
