@@ -71,6 +71,10 @@ class UI {
 		}
 		this.state = new_state;
 	}
+	cap(word){
+		const cap = word.charAt(0).toUpperCase() + word.slice(1);
+		return cap;
+	}
 	show_results(data){
 		const matrix = data;
 		// empty results area
@@ -82,7 +86,11 @@ class UI {
 			const keys = Object.keys(matrix[i]);
 			for (let j = 0; j < keys.length; j++) {
 				const cell = document.createElement('td');
-				cell.innerHTML = matrix[i][keys[j]];
+				if(j==0)
+					cell.innerHTML = (i<5 ? '#'+(i+1)+': ' : '') + '<b>'
+						+this.cap(matrix[i][keys[j]]) + '</b>';
+				else  
+					cell.innerHTML = matrix[i][keys[j]];
 				row.appendChild(cell);
 			}
 			table.appendChild(row);
