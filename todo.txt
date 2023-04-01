@@ -1,8 +1,8 @@
-WIKIGUESS TODO:
+WIKIHOOT TODO:
 --------------
-- name: should be a mash of 'family feud' with 'kahoot'
 
 TODO:
+- BUG: if i guess the word and its plural (e.g. state and states), i get double the score on it
 - filtering word list after server retrieves the article: (article_generator.js function: create_word_list)
   - they should be consolidated so that 'scent' and 'scents' for example are counted together
   - make sure no part of the title (or its varient) is in the words
