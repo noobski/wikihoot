@@ -12,6 +12,7 @@ class UI {
 		this.article_c = document.getElementById('article_container');
 		this.results_c = document.getElementById('results_container');
 		this.timer_c = document.getElementById('timer_container');
+		this.header_c = document.getElementById('header');
 		// start in mode 'lobby'
 		this.change_state('lobby');
 	}
@@ -30,11 +31,12 @@ class UI {
 			buttons_c.restart.style.display = 'none';
 			// show only 'players' area
 			game_c.style.display = 'none';
-			players_c.style.backgroundColor = 'orange';
+			players_c.style.backgroundColor = '#111111';
+			players_c.style.color = 'skyblue';
 			results_c.style.display = 'none';
 			// article header
-			article_c.className = 'normal_header';
-			article_c.innerHTML = 'Wikihoot!';
+			this.header_c.className = 'normal_header';
+			article_c.innerHTML = 'Wikihoot';
 		}
 		else if(new_state === 'game'){
 			// stop spinner on start button
@@ -48,10 +50,11 @@ class UI {
 			buttons_c.restart.style.display = 'none';
 			// show only 'game' area
 			game_c.style.display = 'block';
-			players_c.style.backgroundColor = 'green';
+			players_c.style.backgroundColor = '#111111';
+			players_c.style.color = 'skyblue';
 			results_c.style.display = 'none';
 			// article header
-			article_c.className = 'inverted_header';
+			this.header_c.className = 'inverted_header';
 			article_c.innerHTML = data;
 		}
 		else if(new_state === 'results'){
@@ -61,7 +64,8 @@ class UI {
 			buttons_c.restart.style.display = 'block';
 			// show only 'results' area
 			game_c.style.display = 'none';
-			players_c.style.backgroundColor = 'red';
+			players_c.style.backgroundColor = 'skyblue';
+			players_c.style.color = '#111111';
 			results_c.style.display = 'block';
 			// create matrix of results
 			this.show_results(data);
@@ -122,7 +126,7 @@ class UI {
 		if(!this.spinner_on_start_button)
 		{
 			b.innerHTML = 'Start';
-			b.style.backgroundColor = 'green';
+			b.style.backgroundColor = '#5D8CAE'; // todo: change to spinner class color
 			return;
 		}
 		b.style.backgroundColor = 'grey';

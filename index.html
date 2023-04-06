@@ -5,13 +5,14 @@
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
   <link rel='stylesheet' type='text/css' href='styles.css'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js'></script>
 </head>
 <body>
-	<header class='normal_header'>
-		<h1 id='article_container'>Wikihoot!</h1>
+	<header id='header' class='normal_header'>
+		<h1 id='article_container'></h1>
 	</header>
-	<main>
+	<main id='main'>
 
 <!--
 	<button id='instructions_button'>Instructions</button>
@@ -20,18 +21,11 @@
 		seconds, each player will receive a score based on how many times these words (and their
 		variants) appear in the article. The player with the highest score wins! </p>
 -->
-	Players:
-	<div id='players_container'></div><br>
-	<select id="lang-select">
+	<br><div id='players_container'></div><br>
+	<select id="lang-select" style="display: none">
 		<option value="en">English</option>
 		<option value="he">Hebrew</option>
 	</select>
-
-	<div id='game_button_container'>
-		<button id='start_button'>Start</button>
-		<button id='quit_button'>Quit</button>
-		<button id='restart_button'>Restart</button>
-	</div>	
 
 	<div id='game_container'>
 		<textarea id='guesses_container' placeholder='Type here...'></textarea>
@@ -39,6 +33,12 @@
 	</div>
 
 	<div id='results_container'></div>
+
+	<div id='game_button_container'>
+		<button id='start_button'>Start</button>
+		<button id='quit_button'>Quit</button>
+		<button id='restart_button'>Restart</button>
+	</div>	
 
 	<script src='./wikihoot_ui.js'> </script>
 	<script src='./wikihoot_client.js'> </script>

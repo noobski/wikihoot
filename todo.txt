@@ -3,6 +3,9 @@ WIKIHOOT TODO:
 
 TODO:
 - BUG: if i guess the word and its plural (e.g. state and states), i get double the score on it
+- BUG: if a player quits, the timer stops for the other players
+... all formatting in css, not in the ui file
+
 - filtering word list after server retrieves the article: (article_generator.js function: create_word_list)
   - they should be consolidated so that 'scent' and 'scents' for example are counted together
   - make sure no part of the title (or its varient) is in the words
