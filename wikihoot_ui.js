@@ -71,7 +71,7 @@ class UI {
 			this.show_results(data);
 		}
 		else{
-			throw new Error('Invalid state');
+			throw new Error('Invalid state!');
 		}
 		this.state = new_state;
 	}
