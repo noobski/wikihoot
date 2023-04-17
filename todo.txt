@@ -2,7 +2,7 @@ WIKIHOOT TODO:
 --------------
 
 TODO:
-- BUG: if i guess the word and its plural (e.g. state and states), i get double the score on it
+- BUG: if i guess the word and its plural (e.g. state and states), i get double the score on it. same for title, which if plural i get credit for instead of it being erased
 - BUG: if a player quits, the timer stops for the other players
 ... all formatting in css, not in the ui file
 

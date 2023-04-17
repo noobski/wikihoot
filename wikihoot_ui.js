@@ -93,7 +93,7 @@ class UI {
 				if(j==0)
 					cell.innerHTML = (i<5 ? '#'+(i+1)+': ' : '') + '<b>'
 						+this.cap(matrix[i][keys[j]]) + '</b>';
-				else  
+				else
 					cell.innerHTML = matrix[i][keys[j]];
 				row.appendChild(cell);
 			}
