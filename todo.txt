@@ -2,32 +2,10 @@ WIKIHOOT TODO:
 --------------
 
 TODO:
-- BUG: if i guess the word and its plural (e.g. state and states), i get double the score on it. same for title, which if plural i get credit for instead of it being erased
 - BUG: if a player quits, the timer stops for the other players
-... all formatting in css, not in the ui file
+- all formatting in css, not in the ui file
 
-- filtering word list after server retrieves the article: (article_generator.js function: create_word_list)
-  - they should be consolidated so that 'scent' and 'scents' for example are counted together
-  - make sure no part of the title (or its varient) is in the words
-  - check that all words in the article_generator word list are real words, and lowercase, etc.  
-    check by debugging and looking at the array
-- look for all filenames that create a this.article_txt = 'redirect' (or somethign like that) to clean up
 - understanding variants: 
   - add 'es' 'tion' 'i' (like iraq/iraqi) and other suffixes to the part that creates variants
-- UI Look & Feel
-  - nicer colors and layout
-  - fit to mobile
-- after playing a while, check how much garbage is in the server's user db, by using the route '/rooms'
 - create option for hebrew
 - if 2 players have same name, server crashes
-+ scores in the 'players' section
-+ change article_list_editor to also check whether all the titles are real wiki articles
-+ showing score: 
-  + without stuff in parenthases
-  + sorted by score of word
-  + show 10 highest words, and who guessed each (incl. nobody)
-+ provide 60 seconds for game
-+ after pressing start, all players should get feedback ('generating...') until title appears
-+ how do i want to deal with space in the input (like "south america")
-+ back to lobby button instead of start
-+ deploy on server

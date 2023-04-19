@@ -31,12 +31,11 @@ class UI {
 			buttons_c.restart.style.display = 'none';
 			// show only 'players' area
 			game_c.style.display = 'none';
-			players_c.style.backgroundColor = '#111111';
-			players_c.style.color = 'skyblue';
+			players_c.classList.add('players_container_normal');
 			results_c.style.display = 'none';
 			// article header
 			this.header_c.className = 'normal_header';
-			article_c.innerHTML = 'Wikihoot';
+			article_c.innerHTML = 'Repedia!';
 		}
 		else if(new_state === 'game'){
 			// stop spinner on start button
@@ -50,9 +49,7 @@ class UI {
 			buttons_c.restart.style.display = 'none';
 			// show only 'game' area
 			game_c.style.display = 'block';
-			players_c.style.backgroundColor = '#111111';
-			players_c.style.color = 'skyblue';
-			results_c.style.display = 'none';
+			players_c.classList.add('players_container_normal');
 			// article header
 			this.header_c.className = 'inverted_header';
 			article_c.innerHTML = data;
@@ -64,8 +61,7 @@ class UI {
 			buttons_c.restart.style.display = 'block';
 			// show only 'results' area
 			game_c.style.display = 'none';
-			players_c.style.backgroundColor = 'skyblue';
-			players_c.style.color = '#111111';
+			players_c.classList.add('players_container_score');
 			results_c.style.display = 'block';
 			// create matrix of results
 			this.show_results(data);
