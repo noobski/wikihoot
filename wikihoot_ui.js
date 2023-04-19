@@ -35,7 +35,7 @@ class UI {
 			results_c.style.display = 'none';
 			// article header
 			this.header_c.className = 'normal_header';
-			article_c.innerHTML = 'Repedia!';
+			article_c.innerHTML = 'Repedia';
 		}
 		else if(new_state === 'game'){
 			// stop spinner on start button

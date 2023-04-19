@@ -9,3 +9,5 @@ TODO:
   - add 'es' 'tion' 'i' (like iraq/iraqi) and other suffixes to the part that creates variants
 - create option for hebrew
 - if 2 players have same name, server crashes
+- write a game server that keeps track of games played (did i 
+  already write one?)
