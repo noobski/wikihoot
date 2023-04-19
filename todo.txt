@@ -3,8 +3,6 @@ WIKIHOOT TODO:
 
 TODO:
 - BUG: if a player quits, the timer stops for the other players
-- all formatting in css, not in the ui file
-
 - understanding variants: 
   - add 'es' 'tion' 'i' (like iraq/iraqi) and other suffixes to the part that creates variants
 - create option for hebrew

@@ -76,6 +76,9 @@ main {
 	justify-content: center;
 	position: relative;
 }
+textarea::placeholder {
+	color: white;
+  }
 #results_container {
 	color: #eeeeee;
 }
@@ -119,18 +122,17 @@ button,  #players_container {
 
 button {
 	text-align: center;
-	background-color: #5D8CAE;
-	color: #fff;
+	background-color: #f4f58c;
+	color: black;
 	border: none;
 	border-radius: 5px;
 	transition: all 0.1s ease-in-out;
 	width: 30%;
 	height: 3em;
 }
-button:hover {
-	background-color: #3e8e41;
+.button_lobby {
+	background-color: #f4f58c;
 }
-
 @media screen and (max-width: 768px) {
 	.button {
 		padding: 0.5rem 1rem;

@@ -29,13 +29,14 @@ class UI {
 			buttons_c.start.style.display = 'block';
 			buttons_c.quit.style.display = 'none';
 			buttons_c.restart.style.display = 'none';
+			buttons_c.start.classList.add('button_lobby');
 			// show only 'players' area
 			game_c.style.display = 'none';
 			players_c.classList.add('players_container_normal');
 			results_c.style.display = 'none';
 			// article header
 			this.header_c.className = 'normal_header';
-			article_c.innerHTML = 'Repedia';
+			article_c.innerHTML = 'REPEDIA';
 		}
 		else if(new_state === 'game'){
 			// stop spinner on start button
